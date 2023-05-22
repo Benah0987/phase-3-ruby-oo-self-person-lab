@@ -43,6 +43,20 @@ class Person
         self.hygiene += 4
         "♪ Rub-a-dub just relaxing in the tub ♫"
     end
+
+    # working out
+    def work_out
+        self.happiness += 2
+        self.hygiene -= 3
+        "♪ another one bites the dust ♫"
+    end
+
+    # Calling a Friend
+    def call_friend(friend)
+        self.happiness += 3
+        friend.happiness += 3
+        "Hi #{friend.name}! It's #{self.name}. How are you?"
+    end
   end
   
   person = Person.new("Bazenga")
@@ -71,3 +85,25 @@ class Person
 puts person.hygiene
 puts person.take_bath
 puts person.hygiene
+
+# checking workout changes
+puts person.happiness
+puts person.hygiene
+puts person.work_out
+
+puts person.happiness
+# (after incrementing by 2)
+
+puts person.hygiene
+# (after decrementing by 3)
+
+# CHECKING WITH FRIENDS
+stella = Person.new("Stella")
+felix = Person.new("Felix")
+
+puts stella.happiness
+puts felix.happiness
+
+
+puts stella.call_friend(felix)
+#  Hi Felix! It's Stella. How are you?
